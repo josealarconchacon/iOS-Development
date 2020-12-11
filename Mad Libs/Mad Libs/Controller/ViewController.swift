@@ -51,6 +51,10 @@ class ViewController: UIViewController {
         let story = "At the age of \(ageTextField.text!), \(firstNameTextField.text!) took a trip to \(locationTextField.text!) with \(Int(numberOfPetsStepper.value)) pets in order to \(verbTextField.text!) with a \(animal!). \(firstNameTextField.text!) decided to buy \(Int(numberSlider.value)). \(happyEnding)"
         print(story)
         
+        let alertController = UIAlertController(title: "\(firstNameTextField.text!) Story ", message: story, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Done", style: .default, handler: nil)
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
