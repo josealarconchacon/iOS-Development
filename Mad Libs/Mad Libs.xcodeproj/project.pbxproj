@@ -99,12 +99,9 @@
 		67C012572583F7D4006D1B6A /* Mad Libs */ = {
 			isa = PBXGroup;
 			children = (
-				67C012582583F7D4006D1B6A /* AppDelegate.swift */,
-				67C0125A2583F7D4006D1B6A /* SceneDelegate.swift */,
-				67C0125C2583F7D4006D1B6A /* ViewController.swift */,
-				67C0125E2583F7D4006D1B6A /* Main.storyboard */,
-				67C012612583F7D7006D1B6A /* Assets.xcassets */,
-				67C012632583F7D7006D1B6A /* LaunchScreen.storyboard */,
+				67D3364C2583FCD600FE148D /* Support File */,
+				67D336502583FCF400FE148D /* Controller */,
+				67D336542583FCFF00FE148D /* View */,
 				67C012662583F7D7006D1B6A /* Info.plist */,
 			);
 			path = "Mad Libs";
@@ -126,6 +123,41 @@
 				67C0127C2583F7D7006D1B6A /* Info.plist */,
 			);
 			path = "Mad LibsUITests";
+			sourceTree = "<group>";
+		};
+		67D3364C2583FCD600FE148D /* Support File */ = {
+			isa = PBXGroup;
+			children = (
+				67C012582583F7D4006D1B6A /* AppDelegate.swift */,
+				67C0125A2583F7D4006D1B6A /* SceneDelegate.swift */,
+				67C012612583F7D7006D1B6A /* Assets.xcassets */,
+			);
+			path = "Support File";
+			sourceTree = "<group>";
+		};
+		67D336502583FCF400FE148D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				67C0125C2583F7D4006D1B6A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67D336542583FCFF00FE148D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				67D336552583FD0600FE148D /* Storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67D336552583FD0600FE148D /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				67C0125E2583F7D4006D1B6A /* Main.storyboard */,
+				67C012632583F7D7006D1B6A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
