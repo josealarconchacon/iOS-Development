@@ -37,9 +37,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sliderDidChanged(_ sender: UISlider) {
+        // update the label on the left of the slider base on the current value
+        numberLabel.text = "\(Int((sender.value)))"
     }
     
     @IBAction func stepperDidChanged(_ sender: UIStepper) {
+        // update lable on the left of the stepper base on current value
+        numberOfPetsLable.text = "\(Int(sender.value))"
     }
     @IBAction func createStoryDidTap(_ sender: UIButton) {
     }
