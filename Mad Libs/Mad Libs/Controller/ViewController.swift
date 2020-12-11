@@ -46,6 +46,11 @@ class ViewController: UIViewController {
         numberOfPetsLable.text = "\(Int(sender.value))"
     }
     @IBAction func createStoryDidTap(_ sender: UIButton) {
+        let animal = animalSegmenteControl.titleForSegment(at: animalSegmenteControl.selectedSegmentIndex)
+        let happyEnding = happySwitch.isOn ? "Now they live happily ever after" : "Things did not turn out too well..."
+        let story = "At the age of \(ageTextField.text!), \(firstNameTextField.text!) took a trip to \(locationTextField.text!) with \(Int(numberOfPetsStepper.value)) pets in order to \(verbTextField.text!) with a \(animal!). \(firstNameTextField.text!) decided to buy \(Int(numberSlider.value)). \(happyEnding)"
+        print(story)
+        
     }
 }
 
