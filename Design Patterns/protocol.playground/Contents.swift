@@ -11,19 +11,19 @@ protocol Moveable{
 // Define Classes that conform to the Protocol
 class Car: Moveable{
     func moveFoward(miles_per_hour: Int) {
-        <#code#>
+        print("moving forward \(miles_per_hour) in car")
     }
     
     func moveBackward(miles_per_hour: Int) {
-        <#code#>
+        print("moving backward \(miles_per_hour) in car")
     }
     
     func turnLeft() {
-        <#code#>
+        print("turning left in the next street")
     }
     
     func turnRight() {
-        <#code#>
+        print("turning right in the main avenu")
     }
     
 
