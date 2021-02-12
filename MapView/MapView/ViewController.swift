@@ -9,7 +9,8 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager: CLLocationManager!
@@ -31,6 +32,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if locationManager.authorizationStatus == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
         }
+        
+        mapView.delegate = self
     }
     
 
@@ -90,6 +93,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first!
         print("location update latitude: \(location.coordinate.latitude)  longitude: \(location.coordinate.longitude)")
+    }
+    
+    // display the overlay for the route
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let render = MKPolygonRenderer(overlay: overlay)
+        render.strokeColor = UIColor.green
+        render.lineWidth = 5.0
+        return render
     }
 }
 
