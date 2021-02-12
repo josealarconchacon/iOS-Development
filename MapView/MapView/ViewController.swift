@@ -42,7 +42,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let golden_state_warriors = LocationAnnotation(title: "Golden State Warriors Chase Center", coordinate: CLLocationCoordinate2D(latitude: 37.76880989976761, longitude: -122.38754333680092))
         // annotation that will represent the destination
         let oracle_park = LocationAnnotation(title: "Oracle Park", coordinate: CLLocationCoordinate2D(latitude: 37.779290451757895, longitude: -122.38922688420824))
-        mapView.addAnnotation(golden_state_warriors)
         mapView.addAnnotations([golden_state_warriors, oracle_park])
         displayRoute(sourceCoordinate: golden_state_warriors.coordinate, destinationCoordinate: oracle_park.coordinate)
         
@@ -97,7 +96,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     // display the overlay for the route
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let render = MKPolygonRenderer(overlay: overlay)
+        let render = MKPolylineRenderer(overlay: overlay)
         render.strokeColor = UIColor.green
         render.lineWidth = 5.0
         return render
