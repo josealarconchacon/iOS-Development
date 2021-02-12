@@ -7,8 +7,10 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
+    @IBOutlet weak var mapView: MKMapView!
     
     var locationManager: CLLocationManager!
     
@@ -25,7 +27,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if locationManager.authorizationStatus == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
         }
+
+        // annotatipn
+        let golden_state_warriors = LocationAnnotation(title: "Golden State Warriors Chase Center", coordinate: CLLocationCoordinate2D(latitude: 37.76880989976761, longitude: -122.38754333680092))
+        mapView.addAnnotation(golden_state_warriors)
+        // center the visible region of our mapview on that single annotation
+        mapView.setCenter(golden_state_warriors.coordinate, animated: false)
     }
+    
     // Delegate method
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
