@@ -5,7 +5,10 @@ class ExecutiveOfficer{
     
     // Create a Singleton via type property
     static var shared = ExecutiveOfficer()
+    
+    private init() {}
 }
 
 // Access the Singleton by referencing the name of the typ
 ExecutiveOfficer.shared.salary
+
