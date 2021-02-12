@@ -29,5 +29,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationM.startUpdatingLocation()
         }
     }
+    
+    // Delegate Methods
+    // invoke any time the permission of the location manager has change
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationM.startUpdatingLocation()
+        }
+    }
+    
+    // This delegate method will be u=invoke whenever a user location has been updated
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.first!
+        print("Location Update: latitude -> \(location.coordinate.latitude), longitude ->  \(location.coordinate.longitude)")
+    }
 }
 
